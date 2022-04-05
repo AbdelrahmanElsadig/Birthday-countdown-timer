@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@700&display=swap');
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    /* ### Primary */
+
+    --Grayish-blue: hsl(237, 18%, 59%);
+    --Soft-red: #fb6087;
+
+    /* ### Neutral */
+
+    --white: hsl(0, 0%, 100%);
+    --Dark-desaturated-blue: hsl(236, 21%, 26%);
+    --Very-dark-blue: hsl(235, 16%, 14%);
+    --dark-mostly-black-blue: hsl(234, 17%, 12%);
+}
+
+
+body {
+    font-family: 'Red Hat Text';
+    background-image: url(../images/bg-stars.svg);
+    background-size: cover;
+    display: flex;
+    flex-flow: column;
+    min-height: 100vh;
+    background-color: var(--dark-mostly-black-blue);
+}
+
+.main {
+    margin: auto;
+    min-width: calc(340rem/16);
+    width: 80%;
+    text-align: center;
+    height: fit-content;
+    display: flex;
+    flex-flow: column;
+    gap: 2rem;
+}
+
+.content {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.heading {
+    color: var(--white);
+    letter-spacing: 0.5rem;
+}
+
+
+.card {
+    display: flex;
+    flex-flow: column;
+    gap: 1rem;
+}
+
+.panel {
+    height: 10rem;
+    width: 10rem;
+    border-radius: calc(16rem/16);
+    position: relative;
+}
+
+.dark {
+    border-radius: calc(8rem/16) calc(8rem/16) 0 0;
+    background-color: var(--Very-dark-blue);
+    height: 50%;
+}
+
+.light {
+    background-color: var(--Dark-desaturated-blue);
+    height: 50%;
+    border-radius: 0 0 calc(8rem/16) calc(8rem/16);
+}
+
+.ball {
+    background-color: var(--dark-mostly-black-blue);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.ball.left {
+    left: 0;
+    height: 1rem;
+    width: 0.5rem;
+    border-radius: 0 0.75rem 0.75rem 0;
+}
+
+.ball.right {
+    right: 0;
+    height: 1rem;
+    width: 0.5rem;
+    border-radius: 0.75rem 0 0 0.75rem;
+}
+
+.number {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 6rem;
+    color: var(--Soft-red);
+    pointer-events: none;
+}
+
+.time {
+    color: var(--Grayish-blue)
+}
+
+
+
+
+
+
+
+footer {
+    margin-top: auto;
+    background-image: url(../images/pattern-hills.svg);
+    background-size: cover;
+    min-height: 21vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+footer img {
+    cursor: pointer;
+    transition: ease-in-out;
+}
+
+footer img:hover {
+    filter: invert(47%) sepia(84%) saturate(558%) hue-rotate(300deg) brightness(99%) contrast(98%);
+}
+
+
+@media (max-width: 875px) {
+    .panel {
+        height: 8rem;
+        width: 8rem;
+    }
+
+    .number {
+        font-size: 4.75rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .panel {
+        height: 6rem;
+        width: 6rem;
+    }
+
+    .number {
+        font-size: 3.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .panel {
+        height: 5rem;
+        width: 5rem;
+    }
+
+    .number {
+        font-size: 2.8rem;
+    }
+}
